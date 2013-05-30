@@ -49,7 +49,7 @@
 <!--{/foreach}-->
 <div id="products" class="contents-main">
 
-    <table>
+    <table class="table">
         <tr>
             <th>商品名</th>
             <td>
@@ -288,10 +288,8 @@
     </table>
 
     <div class="btn-area">
-        <ul>
-            <li><a class="btn" href="javascript:;" onclick="fnModeSubmit('confirm_return','',''); return false;"><span class="btn-prev">前のページに戻る</span></a></li>
-            <li><a class="btn btn-primary" href="javascript:;" onclick="document.form1.submit(); return false;"><span class="btn-next">この内容で登録する</span></a></li>
-        </ul>
+        <a class="btn" href="javascript:;" onclick="fnModeSubmit('confirm_return','',''); return false;"><span class="btn-prev">前のページに戻る</span></a>
+        <a class="btn btn-primary" href="javascript:;" onclick="document.form1.submit(); return false;"><span class="btn-next">この内容で登録する</span></a>
     </div>
 </div>
 </form>

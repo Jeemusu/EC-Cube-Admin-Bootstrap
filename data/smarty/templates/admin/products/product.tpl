@@ -141,7 +141,7 @@ function selectAll(target) {
 	        <tr>
 	            <th>商品種別<span class="attention"> *</span></th>
 	            <td>
-	            	<div class="days_of_week">
+	            	<div class="inline">
 	                <!--{html_radios name="product_type_id" options=$arrProductType selected=$arrForm.product_type_id separator='&nbsp;&nbsp;'}-->
 	                </div>
 	            </td>

@@ -55,7 +55,7 @@
         <!--{assign var=key2 value="class_id2"}-->
         <!--{assign var=class_id1 value=$arrForm[$key1].value|h}-->
         <!--{assign var=class_id2 value=$arrForm[$key2].value|h}-->
-        <table class="list">
+        <table class="table">
                 <tr>
                 <th>規格1(<!--{$arrClass[$class_id1]|default:"未選択"|h}-->)</th>
                 <th>規格2(<!--{$arrClass[$class_id2]|default:"未選択"|h}-->)</th>
@@ -110,12 +110,11 @@
     <!--{/if}-->
 
     <div class="btn-area">
-        <ul>
-            <li><a class="btn-action" href="javascript:;" onclick="fnFormModeSubmit('form1', 'confirm_return','',''); return false"><span class="btn-prev">前へ戻る</span></a></li>
+        <a class="btn-action" href="javascript:;" onclick="fnFormModeSubmit('form1', 'confirm_return','',''); return false"><span class="btn-prev">前へ戻る</span></a>
         <!--{if count($arrForm.check.value) > 0}-->
-            <li><a class="btn-action" href="javascript:;" onclick="fnFormModeSubmit('form1', 'complete','',''); return false;"><span class="btn-next">この内容で登録する</span></a></li>
+            <a class="btn-action" href="javascript:;" onclick="fnFormModeSubmit('form1', 'complete','',''); return false;"><span class="btn-next">この内容で登録する</span></a>
         <!--{/if}-->
-        </ul>
+     
     </div>
 </div>
 </form>
