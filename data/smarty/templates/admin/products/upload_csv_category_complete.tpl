@@ -49,8 +49,6 @@
         </table>
     <!--{/if}-->
     <div class="btn-area">
-        <ul>
-            <li><a class="btn btn-primary" href="?"><span class="btn-prev">戻る</span></a></li>
-        </ul>
+        <a class="btn btn-primary" href="?"><span class="btn-prev">戻る</span></a>
     </div>
 </div>

@@ -39,9 +39,8 @@
         <h2>登録が完了致しました。</h2>
 
         <div class="btn-area">
-            <ul>
-                <li><a class="btn" href="javascript:;" onclick="fnChangeAction('<!--{$smarty.const.ADMIN_PRODUCTS_URLPATH}-->'); fnModeSubmit('search','',''); return false;"><span class="btn-prev">検索結果へ戻る</span></a></li>
-                <li><a class="btn" href="./product.php"><span class="btn-next">続けて登録を行う</span></a></li>
-            </ul>
+            <a class="btn" href="javascript:;" onclick="fnChangeAction('<!--{$smarty.const.ADMIN_PRODUCTS_URLPATH}-->'); fnModeSubmit('search','',''); return false;"><span class="btn-prev">検索結果へ戻る</span></a>
+             <a class="btn" href="./product.php"><span class="btn-next">続けて登録を行う</span></a>
+         
         </div>
 </form>

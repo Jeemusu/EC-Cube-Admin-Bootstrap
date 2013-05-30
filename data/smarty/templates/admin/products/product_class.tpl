@@ -121,7 +121,7 @@
 
 <div id="products" class="contents-main">
 
-    <table>
+    <table class="table">
         <tr>
             <th>商品名</th>
             <td><!--{$arrForm.product_name.value|h}--></td>
@@ -155,13 +155,12 @@
         </tr>
     </table>
     <div class="btn-area">
-        <ul>
-            <li><a class="btn-action" href="javascript:;" onclick="fnChangeAction('<!--{$smarty.const.ADMIN_PRODUCTS_URLPATH}-->'); fnModeSubmit('search','',''); return false;" ><span class="btn-prev">検索結果へ戻る</span></a></li>
-            <li><a class="btn-action" href="javascript:;" onclick="fnModeSubmit('disp','',''); return false;"><span class="btn-next">表示する</span></a></li>
+        <a class="btn" href="javascript:;" onclick="fnChangeAction('<!--{$smarty.const.ADMIN_PRODUCTS_URLPATH}-->'); fnModeSubmit('search','',''); return false;" ><span class="btn-prev">検索結果へ戻る</span></a>
+          <a class="btn btn-primary" href="javascript:;" onclick="fnModeSubmit('disp','',''); return false;"><span class="btn-next">表示する</span></a>
         <!--{if $arrForm.total.value > 0}-->
-            <li><a class="btn-action" href="javascript:;" onclick="fnModeSubmit('delete','',''); return false;"><span class="btn-next">削除する</span></a></li>
+            <a class="btn btn-danger" href="javascript:;" onclick="fnModeSubmit('delete','',''); return false;"><span class="btn-next">削除する</span></a>
         <!--{/if}-->
-        </ul>
+     
     </div>
 
     <!--{if $arrForm.total.value > 0}-->
@@ -181,7 +180,7 @@
         <span class="attention"><!--{$arrErr.check_empty}--></span>
     <!--{/if}-->
 
-    <table class="list">
+    <table class="table">
         <col width="5%" />
         <col width="15%" />
         <col width="15%" />
@@ -193,16 +192,16 @@
         <col width="8%" />
         <col width="8%" />
         <tr>
-            <th><input type="checkbox" onclick="fnAllCheck(this, 'input[name^=check]')" id="allCheck" /> <label for="allCheck"><br>登録</label></th>
+            <th class="center"><input type="checkbox" onclick="fnAllCheck(this, 'input[name^=check]')" id="allCheck" /> <label for="allCheck"><br>登録</label></th>
             <th>規格1<br>(<!--{$arrClass[$class_id1]|default:"未選択"|h}-->)</th>
             <th>規格2<br>(<!--{$arrClass[$class_id2]|default:"未選択"|h}-->)</th>
-            <th>商品コード</th>
-            <th>在庫数<span class="attention">*</span></th>
-            <th><!--{$smarty.const.NORMAL_PRICE_TITLE}-->(円)</th>
-            <th><!--{$smarty.const.SALE_PRICE_TITLE}-->(円)<span class="attention">*</span></th>
-            <th>商品種別<span class="attention">*</span></th>
-            <th>ダウンロード<br>ファイル名<span class="red"><br>上限<!--{$smarty.const.STEXT_LEN}-->文字</span></th>
-            <th>ダウンロード商品用<br>ファイル</th>
+            <th class="center">商品コード</th>
+            <th class="center">在庫数<span class="attention">*</span></th>
+            <th class="center"><!--{$smarty.const.NORMAL_PRICE_TITLE}-->(円)</th>
+            <th class="center"><!--{$smarty.const.SALE_PRICE_TITLE}-->(円)<span class="attention">*</span></th>
+            <th class="center">商品種別<span class="attention">*</span></th>
+            <th class="center">ダウンロード<br>ファイル名<span class="red"><br>上限<!--{$smarty.const.STEXT_LEN}-->文字</span></th>
+            <th class="center">ダウンロード商品用<br>ファイル</th>
         </tr>
         <!--{section name=cnt loop=$arrForm.total.value}-->
             <!--{assign var=index value=$smarty.section.cnt.index}-->
@@ -242,14 +241,14 @@
                     <!--{if $arrErr[$key][$index]}-->
                         <span class="attention"><!--{$arrErr[$key][$index]}--></span>
                     <!--{/if}-->
-                    <input type="text" name="<!--{$key}-->[<!--{$index}-->]" value="<!--{$arrForm[$key].value[$index]|h}-->" size="6" class="box6" maxlength="<!--{$arrForm[$key].length}-->" <!--{if $arrErr[$key][$index] != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> id="<!--{$key}-->_<!--{$index}-->" />
+                    <input type="text" name="<!--{$key}-->[<!--{$index}-->]" value="<!--{$arrForm[$key].value[$index]|h}-->" class="input-mini" maxlength="<!--{$arrForm[$key].length}-->" <!--{if $arrErr[$key][$index] != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> id="<!--{$key}-->_<!--{$index}-->" />
                 </td>
                 <td class="center">
                     <!--{assign var=key value="stock"}-->
                     <!--{if $arrErr[$key][$index]}-->
                         <span class="attention"><!--{$arrErr[$key][$index]}--></span>
                     <!--{/if}-->
-                    <input type="text" name="<!--{$key}-->[<!--{$index}-->]" value="<!--{$arrForm[$key].value[$index]|h}-->" size="6" class="box6" maxlength="<!--{$arrForm[$key].length}-->" <!--{if $arrErr[$key][$index] != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> id="<!--{$key}-->_<!--{$index}-->" />
+                    <input type="text" name="<!--{$key}-->[<!--{$index}-->]" value="<!--{$arrForm[$key].value[$index]|h}-->" class="input-mini" maxlength="<!--{$arrForm[$key].length}-->" <!--{if $arrErr[$key][$index] != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> id="<!--{$key}-->_<!--{$index}-->" />
                     <!--{assign var=key value="stock_unlimited"}--><br />
                     <!--{if $arrErr[$key][$index]}-->
                         <span class="attention"><!--{$arrErr[$key][$index]}--></span>
@@ -261,14 +260,14 @@
                     <!--{if $arrErr[$key][$index]}-->
                         <span class="attention"><!--{$arrErr[$key][$index]}--></span>
                     <!--{/if}-->
-                    <input type="text" name="<!--{$key}-->[<!--{$index}-->]" value="<!--{$arrForm[$key].value[$index]|h}-->" size="6" class="box6" maxlength="<!--{$arrForm[$key].length}-->" <!--{if $arrErr[$key][$index] != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> id="<!--{$key}-->_<!--{$index}-->" />
+                    <input type="text" name="<!--{$key}-->[<!--{$index}-->]" value="<!--{$arrForm[$key].value[$index]|h}-->" class="input-mini" maxlength="<!--{$arrForm[$key].length}-->" <!--{if $arrErr[$key][$index] != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> id="<!--{$key}-->_<!--{$index}-->" />
                 </td>
                 <td class="center">
                     <!--{assign var=key value="price02"}-->
                     <!--{if $arrErr[$key][$index]}-->
                         <span class="attention"><!--{$arrErr[$key][$index]}--></span>
                     <!--{/if}-->
-                    <input type="text" name="<!--{$key}-->[<!--{$index}-->]" value="<!--{$arrForm[$key].value[$index]|h}-->" size="6" class="box6" maxlength="<!--{$arrForm[$key].length}-->" <!--{if $arrErr[$key][$index] != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> id="<!--{$key}-->_<!--{$index}-->" />
+                    <input type="text" name="<!--{$key}-->[<!--{$index}-->]" value="<!--{$arrForm[$key].value[$index]|h}-->" class="input-mini" maxlength="<!--{$arrForm[$key].length}-->" <!--{if $arrErr[$key][$index] != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> id="<!--{$key}-->_<!--{$index}-->" />
                 </td>
                 <td class="class-product-type">
                     <!--{assign var=key value="product_type_id"}-->
@@ -305,9 +304,7 @@
     </table>
 
     <div class="btn-area">
-        <ul>
-            <li><a class="btn-action" href="javascript:;" onclick="fnFormModeSubmit('form1', 'edit', '', ''); return false;"><span class="btn-next">確認ページへ</span></a></li>
-        </ul>
+        <a class="btn-primary btn" href="javascript:;" onclick="fnFormModeSubmit('form1', 'edit', '', ''); return false;"><span class="btn-next">確認ページへ</span></a>
     </div>
 
     <!--{/if}-->
