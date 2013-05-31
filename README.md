@@ -33,6 +33,7 @@ An CMS theme for EC-CUBE (v2.12.3) utilizing twitter bootstrap.
 * Jquery UI v1.10.3
 * Twitter Bootstrap v2.3.1
 * Font Awesome v3.1.1
+* Flotcharts.js
 
 ##TO DO 
 - [x] Tidy up CSS Markup
