@@ -58,7 +58,7 @@
             <input type="hidden" name="indexflag[<!--{$smarty.section.cnt.iteration}-->]" value="<!--{$arrForm[cnt].indexflag}-->" />
         <!--{/section}-->
     </table>
-	<div style="margin: 10px 0 0 0">
+	<div class="btn-area">
     <a class="btn btn-primary" href="javascript:;" onclick="fnFormModeSubmit('index_form', 'confirm', '', ''); return false;"><span class="btn-next">変更する</span></a>
     </div>
 </form>

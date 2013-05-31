@@ -41,7 +41,7 @@ function func_submit( id ){
 </script>
 
 <!--▼検索フォーム-->
-<div style="padding: 0 20px;margin:0;">
+<div class="padd-window">
 <form name="form1" id="form1" method="post" action="#">
 <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />
 <input name="mode" type="hidden" value="search" />

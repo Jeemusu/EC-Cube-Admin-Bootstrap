@@ -53,4 +53,4 @@ $(function(){
 
 <body id="popup">
 
-<div id="popup-container" style="margin-top:20px;">
+<div id="popup-container">

@@ -30,7 +30,7 @@ self.moveTo(20,20);self.focus();
 //-->
 </script>
 
-<form style="margin:0px;padding: 0px 20px;" name="form1" id="form1" method="post" action="" onsubmit="return fnRegistMember();">
+<form class="padd-window" name="form1" id="form1" method="post" action="" onsubmit="return fnRegistMember();">
 <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />
 <input type="hidden" name="mode" value="<!--{$tpl_mode|h}-->">
 <input type="hidden" name="member_id" value="<!--{$tpl_member_id|h}-->">

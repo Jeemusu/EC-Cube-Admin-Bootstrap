@@ -81,7 +81,7 @@ jQuery(function(){
 </div>
 <div style="display: none">
     <div id="maparea">
-        <div id="maps" style="width: 300px; height: 300px"></div>
+        <div id="maps"></div>
         <a class="btn-normal" href="javascript:;" id="inputPoint">この位置を入力</a>
     </div>
 </div>

@@ -36,7 +36,8 @@ An CMS theme for EC-CUBE (v2.12.3) utilizing twitter bootstrap.
 
 ##TO DO 
 - [x] Tidy up CSS Markup
-- [ ] Remove any remaining inline css
+- [x] Tidy up HTML Markup
+- [x] Add support for flotcharts (makes graphs pretty)
+- [x] Remove any remaining inline css (removed as many non-system dependent styles as possible)
 - [ ] Rewrite original inline javascript (eww)
-- [ ] Tidy up HTML Markup
 - [ ] Multi-browser Testing

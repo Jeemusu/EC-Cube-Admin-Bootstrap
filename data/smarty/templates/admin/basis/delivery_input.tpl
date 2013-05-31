@@ -118,7 +118,7 @@
 
     <!--{if $smarty.const.INPUT_DELIV_FEE}-->
     <h2>配送料登録</h2>
-    <div style="margin:0 0 10px 0;">全国一律送料&nbsp;&nbsp;<div class="input-append"><input style="margin:0;" type="text" name="fee_all" class="box10" /><span class="add-on">円</span></div>　<a class="btn" href="javascript:;" onclick="fnSetDelivFee(<!--{$smarty.const.DELIVFEE_MAX}-->); return false;"><span>反映</span></a></div>
+    <div class="btn-area-top">全国一律送料&nbsp;&nbsp;<div class="input-append"><input class="no-margin" type="text" name="fee_all" class="box10" /><span class="add-on">円</span></div>　<a class="btn" href="javascript:;" onclick="fnSetDelivFee(<!--{$smarty.const.DELIVFEE_MAX}-->); return false;"><span>反映</span></a></div>
     <table class="table">
         <!--{section name=cnt loop=$smarty.const.DELIVFEE_MAX}-->
         <!--{assign var=type value="`$smarty.section.cnt.index%2`"}-->

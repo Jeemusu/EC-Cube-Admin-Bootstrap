@@ -27,7 +27,7 @@
     <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />
     <input type="hidden" name="mode" value="show" />
     <div id="basis-masterdata-select" class="btn-area-top">
-        <select name="master_data_name" id="master_data_name" style="margin:0;">
+        <select name="master_data_name" id="master_data_name" class="no-margin">
         <!--{html_options output=$arrMasterDataName values=$arrMasterDataName selected=$masterDataName}-->
         </select>
         <a class="btn" href="javascript:;" onclick="fnFormModeSubmit('form1', 'show', '', ''); return false;"><span>選択</span></a>
@@ -65,7 +65,7 @@
         <table class="table">
             <tr>
                 <th><div class="input-prepend"><span class="add-on">ID</span><input type="text" name="id[]" class="input-small" /></div></th>
-                <td><div class="input-prepend"><span class="add-on">値</span><input type="text" name="name[]" style="" class="span5" /></div></td>
+                <td><div class="input-prepend"><span class="add-on">値</span><input type="text" name="name[]" class="span5" /></div></td>
             </tr>
         </table>
         <div class="btn-area">

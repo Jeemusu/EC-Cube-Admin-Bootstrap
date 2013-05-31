@@ -31,6 +31,7 @@ span.attention {
 .center {
 	text-align: center;
 }
+
 .right {
 	text-align: right;
 }
@@ -45,6 +46,7 @@ span.attention {
 	background: -o-linear-gradient(top, #f6f6f6, #f1f1f1);
 	margin: 0 0 20px 0;
 }
+
 .popup-btn-area {
 	margin: 0;
 }
@@ -86,9 +88,11 @@ span.attention {
 .ui-sortable div.first {
 	margin-top:0px;
 }
+
 .table td.ui-sortable {
 	vertical-align: top;
 }
+
 .ui-sortable div.placeholder {
 	background: #d1f1fc;
 	width: 100%;
@@ -100,6 +104,39 @@ span.attention {
 	margin: 20px 0 40px 0;
 }
 
+
+#placeholder {	
+	margin: 40px 0;
+}
+
+#overview {
+	margin: 0 0 40px 0;
+}
+
+.no-margin {
+	margin:0;
+}
+
+.padd-window {
+	padding: 0 20px;
+	margin: 0;
+}
+
+/* POPUPS
+----------------------------------------------- */
+#popup-container {
+	margin-top: 20px;
+}
+
+#popup-container-big {
+ 	width:700px;
+	margin-top:20px;
+}
+
+#maps {
+	width: 600px; 
+	height: 500px;
+}
 
 /* ログイン
 ----------------------------------------------- */

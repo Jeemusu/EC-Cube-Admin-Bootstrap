@@ -258,7 +258,7 @@
 	
 	<div style="display: none">
 	    <div id="maparea">
-	        <div id="maps" style="width: 600px; height: 500px"></div>
+	        <div id="maps"></div>
 	        <div class="btn-area popup-btn-area">
 	        <a class="btn btn-primary" href="javascript:;" id="inputPoint">この位置を入力</a>
 	        </div>

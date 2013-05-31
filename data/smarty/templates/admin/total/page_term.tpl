@@ -1,26 +1,142 @@
-<!--{*
-/*
- * This file is part of EC-CUBE
- *
- * Copyright(c) 2000-2013 LOCKON CO.,LTD. All Rights Reserved.
- *
- * http://www.lockon.co.jp/
- *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; either version 2
- * of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- */
-*}-->
+<!--{if $graph_type == 'term'}-->
+	
+	<!--{if $arrForm.type.value == 'wday' || $arrForm.type.value == 'year' || $arrForm.type.value == 'hour' || $arrForm.type.value == 'month'}-->
+		<div id="placeholder" style="width:1040px;height:600px"></div>
+		<script>
+			var data = <!--{$tpl_json}-->;
+
+			
+			$.plot("#placeholder", [ data ], {
+				series: {
+					bars: {
+						show: true,
+						
+
+						barWidth: 0.7,
+
+						align: "center"
+					}
+				},
+				xaxis: {
+					mode: "categories",
+					tickLength: 0,
+					autoscaleMargin: 0.1
+				}
+			});
+		</script>
+
+	<!--{elseif $arrForm.type.value == 'day' || $type == ''}-->
+
+		<div id="placeholder" style="width:1040px;height:500px"></div>
+		<div id="overview" style="width:1040px;height:100px"></div>			
+		<script>
+
+			$(function() {
+				var d = <!--{$tpl_json}-->;
+		
+				// first correct the timestamps - they are recorded as the daily
+				// midnights in UTC+0100, but Flot always displays dates in UTC
+				// so we have to add one hour to hit the midnights in the plot
+		
+		
+				for (var i = 0; i < d.length; ++i) {
+					d[i][0] += 540 * 60 * 1000;
+				}
+		
+				function weekendAreas(axes) {
+		
+					var markings = [],
+						d = new Date(axes.xaxis.min);
+		
+					// go to the first Saturday
+		
+					d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 1) % 7))
+					d.setUTCSeconds(0);
+					d.setUTCMinutes(0);
+					d.setUTCHours(0);
+		
+					var i = d.getTime();
+		
+					// when we dont set yaxis, the rectangle automatically
+					// extends to infinity upwards and downwards
+		
+					do {
+						markings.push({ xaxis: { from: i, to: i + 2 * 24 * 60 * 60 * 1000 } });
+						i += 7 * 24 * 60 * 60 * 1000;
+					} while (i < axes.xaxis.max);
+		
+					return markings;
+				}
+		
+				var options = {
+					xaxis: {
+						mode: "time",
+						tickLength: 5
+					},
+					selection: {
+						mode: "x"
+					},
+					grid: {
+						markings: weekendAreas
+					}
+				};
+		
+				var plot = $.plot("#placeholder", [d], options);
+		
+				var overview = $.plot("#overview", [d], {
+					series: {
+						lines: {
+							show: true,
+							lineWidth: 1
+						},
+						shadowSize: 0
+					},
+					xaxis: {
+						ticks: [],
+						mode: "date"
+					},
+					yaxis: {
+						ticks: [],
+						min: 0,
+						autoscaleMargin: 0.1
+					},
+					selection: {
+						mode: "x"
+					}
+				});
+		
+				// now connect the two
+		
+				$("#placeholder").bind("plotselected", function (event, ranges) {
+		
+					// do the zooming
+		
+					plot = $.plot("#placeholder", [d], $.extend(true, {}, options, {
+						xaxis: {
+							min: ranges.xaxis.from,
+							max: ranges.xaxis.to
+						}
+					}));
+		
+		
+					overview.setSelection(ranges, true);
+				});
+		
+				$("#overview").bind("plotselected", function (event, ranges) {
+					plot.setSelection(ranges);
+				});
+		
+				// Add the Flot version string to the footer
+		
+				$("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
+			});
+
+	
+
+		</script>
+	<!--{/if}-->
+<!--{/if}-->
+			
 <table id="total-term" class="table">
     <tr>
         <th>期間</th>

@@ -40,7 +40,7 @@
         <col width="10%" />
         <col width="10%" />
         <col width="15%" />
-        <div style="margin: 0 0 10px 0;">
+        <div class="btn-area-top">
             <a class="btn btn-primary" href="javascript:;" onclick="win02('./input.php','input','620','450'); return false;"><span class="btn-next">メンバーを新規入力</span></a>
         </div>
         <tr>

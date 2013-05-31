@@ -88,7 +88,7 @@ function fnTargetSelf(){
             <td align="left">
                 <span class="attention"><!--{$arrErr.csv_sql}--></span>
                 <div>
-                    <textarea style="width:600px;" name="csv_sql" cols=50 rows=10 align="left" wrap=off style="<!--{if $arrErr.csv_sql != ""}-->background-color: <!--{$smarty.const.ERR_COLOR}-->;<!--{/if}-->"><!--{"\n"}--><!--{$arrForm.csv_sql|h}--></textarea>
+                    <textarea class="span6" name="csv_sql" rows=10 align="left" wrap=off style="<!--{if $arrErr.csv_sql != ""}-->background-color: <!--{$smarty.const.ERR_COLOR}-->;<!--{/if}-->"><!--{"\n"}--><!--{$arrForm.csv_sql|h}--></textarea>
                 </div>
             </td>
         </tr>
