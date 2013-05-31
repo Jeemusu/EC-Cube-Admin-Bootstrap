@@ -1,6 +1,8 @@
 EC-CUBE管理画面用のBOOTSTRAPテーマ
 =======================
 
+[Screenshots](http://s1278.photobucket.com/user/Jeemusu/slideshow/EC%20CUBE%20Admin%20Theme)
+
 EC-CUBE (v2.12.3) の管理画面用のBOOTSTRAPテーマです。
 
 ##インストール
