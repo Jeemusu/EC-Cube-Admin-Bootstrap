@@ -11,7 +11,7 @@ EC-CUBE (v2.12.3) の管理画面用のBOOTSTRAPテーマです。
   * `/data/smarty/template/admin/`　>　`/eccube_directory/data/smarty/template/admin/`
   * `/html/user_data/packages/admin/`　>　`/eccube_directory/html/user_data/packages/admin/`
 * 終了！
-
+ 
 
 ##依存しているライブラリ
 * Jquery v1.8.1
