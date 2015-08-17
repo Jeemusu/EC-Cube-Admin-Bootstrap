@@ -27,6 +27,8 @@ An CMS theme for EC-CUBE (v2.12.3) utilizing twitter bootstrap.
 ## Setup
 * Extract the archive.
 * Move the folders to their respective places within the EC-CUBE install directory.
+  * `/data/smarty/template/admin/`　>　`/eccube_directory/data/smarty/template/admin/`
+  * `/html/user_data/packages/admin/`　>　`/eccube_directory/html/user_data/packages/admin/`
 * Thats it!
 
 ## Third Party Dependencies
@@ -42,5 +44,5 @@ An CMS theme for EC-CUBE (v2.12.3) utilizing twitter bootstrap.
 - [x] Tidy up HTML Markup
 - [x] Add support for flotcharts (makes graphs pretty)
 - [x] Remove any remaining inline css (removed as many non-system dependent styles as possible)
-- [ ] Rewrite original inline javascript (eww)
+- [ ] Rewrite original EC-Cube javascript
 - [ ] Multi-browser Testing
